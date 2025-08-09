@@ -4740,3 +4740,89 @@ td:last-child {
 .contact-list li {
 	padding-left: 0;
 }
+
+/* ==== Personas Dropdown Menu ==== */
+.s-header__menu-links li {
+    position: relative;
+}
+
+.s-header__menu-links li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1c1c1c;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 180px;
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.3);
+    z-index: 999;
+}
+
+.s-header__menu-links li ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.s-header__menu-links li ul li a:hover {
+    background: #ff9900;
+    color: #000;
+}
+
+.s-header__menu-links li:hover > ul {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(5px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+/* ==== Personas Dropdown Menu ==== */
+.s-header__menu-links li {
+    position: relative;
+}
+
+.s-header__menu-links li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1c1c1c;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.3);
+    z-index: 9999;
+}
+
+.s-header__menu-links li ul li a {
+    display: block;
+    padding: 12px 15px;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.3s ease;
+}
+
+.s-header__menu-links li ul li a:hover {
+    background: #ff9900;
+    color: #000;
+}
+
+.s-header__menu-links li:hover > ul {
+    display: block;
+    animation: fadeIn 0.25s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(5px);}
+    to {opacity: 1; transform: translateY(0);}
+}
