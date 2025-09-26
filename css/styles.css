@@ -4757,68 +4757,34 @@ td:last-child {
 .contact-list li {
 	padding-left: 0;
 }
-
 /* ==== Personas Dropdown Menu ==== */
 .s-header__menu-links li {
     position: relative;
 }
 
+/* Dropdown list */
 .s-header__menu-links li ul {
-    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
     position: absolute;
     top: 100%;
     left: 0;
-    background: #1c1c1c;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    min-width: 180px;
-    box-shadow: 0px 8px 15px rgba(0,0,0,0.3);
-    z-index: 999;
-}
-
-.s-header__menu-links li ul li a {
-    display: block;
-    padding: 10px 15px;
-    color: #fff;
-    font-size: 14px;
-    text-decoration: none;
-    transition: background 0.3s ease;
-}
-
-.s-header__menu-links li ul li a:hover {
-    background: #ff9900;
-    color: #000;
-}
-
-.s-header__menu-links li:hover > ul {
-    display: block;
-    animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(5px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-/* ==== Personas Dropdown Menu ==== */
-.s-header__menu-links li {
-    position: relative;
-}
-
-.s-header__menu-links li ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #1c1c1c;
-    list-style: none;
-    padding: 0;
-    margin: 0;
     min-width: 200px;
+
+    background: #1c1c1c;
     box-shadow: 0px 8px 15px rgba(0,0,0,0.3);
+
+    /* Smooth animation settings */
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
     z-index: 9999;
 }
 
+/* List items */
 .s-header__menu-links li ul li a {
     display: block;
     padding: 12px 15px;
@@ -4834,12 +4800,76 @@ td:last-child {
     color: #000;
 }
 
+/* Hover (desktop) */
 .s-header__menu-links li:hover > ul {
-    display: block;
-    animation: fadeIn 0.25s ease-in-out;
+    max-height: 500px; /* enough to fit items */
+    opacity: 1;
+    visibility: visible;
+}
+/* Mobile toggle */
+.s-header__menu-links li.open > ul {
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
 }
 
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(5px);}
-    to {opacity: 1; transform: translateY(0);}
+/* Navbar background */
+.s-header {
+    background-color: #ff8800; /* orange */
+}
+
+/* Navbar links */
+.s-header__menu-links li a {
+    color: #fff; /* white text for contrast */
+}
+
+.s-header__menu-links li a:hover {
+    color: #222; /* dark hover effect */
+}
+
+/* Mobile menu toggle */
+.s-header__menu-toggle span {
+    color: #fff;
+}
+.grid-list-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* smaller min for more breathing space */
+    gap: 2rem;
+}
+
+/* Card Base */
+.card {
+    display: flex;              /* flex ensures equal height content */
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;               /* equal height across rows */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* Card Content */
+.card-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: #111;
+}
+
+.card-content p {
+    margin-bottom: 1rem;
+    color: #555;
+    font-size: 1rem;
+}
+
+.card-cta {
+    font-weight: 600;
+    color: #ff8800; /* orange accent */
+    margin-top: auto;           /* pushes it to bottom */
 }

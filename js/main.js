@@ -384,3 +384,11 @@
     })();
 
 })(document.documentElement);
+// Personas dropdown toggle for mobile
+document.querySelectorAll('.s-header__menu-links .dropdown > a').forEach(link => {
+    link.addEventListener('click', function (e) {
+        // prevent normal navigation when toggling
+        e.preventDefault();
+        this.parentElement.classList.toggle('open');
+    });
+});
