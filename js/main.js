@@ -384,11 +384,18 @@
     })();
 
 })(document.documentElement);
+
+
 // Personas dropdown toggle for mobile
 document.querySelectorAll('.s-header__menu-links .dropdown > a').forEach(link => {
     link.addEventListener('click', function (e) {
-        // prevent normal navigation when toggling
-        e.preventDefault();
-        this.parentElement.classList.toggle('open');
+        const parent = this.parentElement;
+
+        // If dropdown is not open yet, open it and block navigation
+        if (!parent.classList.contains('open')) {
+            e.preventDefault();
+            parent.classList.add('open');
+        } 
+        // If already open, allow navigation (default action works)
     });
 });
