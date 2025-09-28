@@ -4873,3 +4873,43 @@ td:last-child {
     color: #ff8800; /* orange accent */
     margin-top: auto;           /* pushes it to bottom */
 }
+
+.contact-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-block ul li {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+}
+
+.contact-block i {
+    color: #ff8800; /* orange accent */
+    min-width: 20px;
+    text-align: center;
+}
+
+.contact-block a {
+    color: #111;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-block a:hover {
+    color: #ff8800;
+}
+
+.contact-block .label {
+    background: #f1f1f1;
+    color: #555;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    margin-left: 6px;
+}
+
